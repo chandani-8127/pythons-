@@ -1,21 +1,38 @@
-# Q1.Write a R program to add, multiply and divide two vectors of integertype. (Vector
-# length should be minimum 4) 
+# Q1. Write a R program to reverse a number and also calculate the sum ofdigits of that
+# number.(i don't know how to run this r program)
 
-# Define two integer vectors
-vector1 <- c(1, 2, 3, 4)
-vector2 <- c(5, 6, 7, 8)
 
-# Addition
-addition_result <- vector1 + vector2
-print("Addition Result:")
-print(addition_result)
+# Function to reverse a number
+reverse_number <- function(number) {
+  reversed <- 0
+  while (number > 0) {
+    digit <- number %% 10
+    reversed <- reversed * 10 + digit
+    number <- number %/% 10
+  }
+  return(reversed)
+}
 
-# Multiplication
-multiplication_result <- vector1 * vector2
-print("Multiplication Result:")
-print(multiplication_result)
+# Function to calculate the sum of digits of a number
+sum_of_digits <- function(number) {
+  sum_digits <- 0
+  while (number > 0) {
+    digit <- number %% 10
+    sum_digits <- sum_digits + digit
+    number <- number %/% 10
+  }
+  return(sum_digits)
+}
 
-# Division
-division_result <- vector1 / vector2
-print("Division Result:")
-print(division_result)
+# Input the number
+number <- as.integer(readline("Enter a number: "))
+
+# Reverse the number
+reversed <- reverse_number(number)
+
+# Calculate the sum of digits
+sum_digits <- sum_of_digits(number)
+
+# Print the results
+cat("Reversed Number:", reversed, "\n")
+cat("Sum of Digits:", sum_digits, "\n")
